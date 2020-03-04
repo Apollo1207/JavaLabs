@@ -1,7 +1,7 @@
 package ua.lviv.iot.model;
 
 public class Athletics extends SportBuild {
-    int countOfSportDisciplines;
+    private int countOfSportDisciplines;
     private String nameOfBuild;
     private String typeOfField;
 
@@ -9,8 +9,8 @@ public class Athletics extends SportBuild {
 
     }
 
-    public Athletics(int numberOfSeats, int yearOfFoundation, String loctaion, int scaleOfField, int countOfSportDisciplines, String nameOfBuild, String typeOfField) {
-        super(numberOfSeats, yearOfFoundation, loctaion, scaleOfField);
+    public Athletics(int numberOfSeats, int yearOfFoundation, String location, int scaleOfField, int countOfSportDisciplines, String nameOfBuild, String typeOfField) {
+        super(numberOfSeats, yearOfFoundation, location, scaleOfField);
         this.countOfSportDisciplines = countOfSportDisciplines;
         this.nameOfBuild = nameOfBuild;
         this.typeOfField = typeOfField;

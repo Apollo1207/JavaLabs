@@ -10,8 +10,8 @@ public class Swimming extends SportBuild {
 
     }
 
-    public Swimming(int numberOfSeats, int yearOfFoundation, String loctaion, int scaleOfField, int depthOfPool, int countOfTracks, PurificationSystem purificationSystem) {
-        super(numberOfSeats, yearOfFoundation, loctaion, scaleOfField);
+    public Swimming(int numberOfSeats, int yearOfFoundation, String location, int scaleOfField, int depthOfPool, int countOfTracks, PurificationSystem purificationSystem) {
+        super(numberOfSeats, yearOfFoundation, location, scaleOfField);
         this.depthOfPool = depthOfPool;
         this.countOfTracks = countOfTracks;
         this.purificationSystem = purificationSystem;

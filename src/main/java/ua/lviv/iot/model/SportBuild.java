@@ -3,17 +3,17 @@ package ua.lviv.iot.model;
 public class SportBuild {
     private int numberOfSeats;
     private int yearOfFoundation;
-    private String loctaion;
+    private String location;
     private int scaleOfField;
 
     public SportBuild() {
 
     }
 
-    public SportBuild(int numberOfSeats, int yearOfFoundation, String loctaion, int scaleOfField) {
+    public SportBuild(int numberOfSeats, int yearOfFoundation, String location, int scaleOfField) {
         this.numberOfSeats = numberOfSeats;
         this.yearOfFoundation = yearOfFoundation;
-        this.loctaion = loctaion;
+        this.location = location;
         this.scaleOfField = scaleOfField;
     }
 
@@ -33,12 +33,12 @@ public class SportBuild {
         this.yearOfFoundation = yearOfFoundation;
     }
 
-    public String getLoctaion() {
-        return loctaion;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLoctaion(String loctaion) {
-        this.loctaion = loctaion;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public int getScaleOfField() {
