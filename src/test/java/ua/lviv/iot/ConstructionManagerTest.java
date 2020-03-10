@@ -20,6 +20,7 @@ public class ConstructionManagerTest extends BaseConstructionManagerTest {
         constructionManager.addConstructions(builds);
     }
 
+
     @Test
     public void testFindByNumberSeats() {
         List<SportBuild> builds = constructionManager.findByNumberSeats(20);

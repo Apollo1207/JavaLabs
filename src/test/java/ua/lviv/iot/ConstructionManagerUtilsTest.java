@@ -4,16 +4,39 @@ import org.junit.jupiter.api.Test;
 import ua.lviv.iot.manager.ConstructionManagerUtils;
 import ua.lviv.iot.model.SortType;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class ConstructionManagerUtilsTest extends BaseConstructionManagerTest {
 
     @Test
-    public void testSortByNameOfSport() {
-        ConstructionManagerUtils.sortByNameOfSport(builds, SortType.DESC);
-        assertEquals(50, builds.get(0).getNumberOfSeats());
-        assertEquals(100, builds.get(1).getNumberOfSeats());
-        assertEquals(6, builds.get(2).getNumberOfSeats());
+    void sortWithAnonClass() {
+        ConstructionManagerUtils.sortByNameOfSport(builds, SortType.ASCENDING);
+        System.out.println(builds.get(0).getNameOfSport());
+        System.out.println(builds.get(1).getNameOfSport());
+        System.out.println(builds.get(2).getNameOfSport());
+    }
+
+    @Test
+    void sortWithStaticInner() {
+        ConstructionManagerUtils.sortByScaleOfField(builds, SortType.ASCENDING);
+        System.out.println(builds.get(0).getScaleOfField());
+        System.out.println(builds.get(1).getScaleOfField());
+        System.out.println(builds.get(2).getScaleOfField());
+    }
+
+    @Test
+    void sortWithInnerClass() {
+        ConstructionManagerUtils constructionManagerUtils = new ConstructionManagerUtils();
+        constructionManagerUtils.sortByYearOfFoundation(builds, SortType.ASCENDING);
+        System.out.println(builds.get(0).getYearOfFoundation());
+        System.out.println(builds.get(1).getYearOfFoundation());
+        System.out.println(builds.get(2).getYearOfFoundation());
+    }
+
+    @Test
+    void sortViaLambda() {
+        ConstructionManagerUtils.sortByNumberOfSeats(builds, SortType.DESCENDING);
+        System.out.println(builds.get(0).getNumberOfSeats());
+        System.out.println(builds.get(1).getNumberOfSeats());
+        System.out.println(builds.get(2).getNumberOfSeats());
     }
 
 
