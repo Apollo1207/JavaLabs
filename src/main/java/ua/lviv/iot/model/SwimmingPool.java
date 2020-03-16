@@ -7,6 +7,7 @@ public class SwimmingPool extends SportBuild {
     private PurificationSystem purificationSystem;
 
     public SwimmingPool() {
+        this(0,0,null,0,null,0,0,null);
     }
 
     public SwimmingPool(final int numberOfSeats, final int yearOfFoundation, final String location,
@@ -16,6 +17,16 @@ public class SwimmingPool extends SportBuild {
         this.depthOfPool = depthOfPool;
         this.countOfTracks = countOfTracks;
         this.purificationSystem = purificationSystem;
+    }
+
+    public final String getHeaders() {
+        return super.getHeaders() + "," + " depthOfPool" + "," + " countOfTracks " + "," + "purificationSystem";
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + "," + " depthOfPool = " + getDepthOfPool() + ","
+                + " countOfTracks = " + getCountOfTracks()
+                + " purificationSystem = " + getPurificationSystem();
     }
 
     public final int getDepthOfPool() {

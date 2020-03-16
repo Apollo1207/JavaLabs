@@ -1,0 +1,3 @@
+typeOfProduct = 50, yearOfFoundation = 2008, location = Lviv, scaleOfField = 848,nameOfSport = Football, roofType = OPEN, colorOfField = green countOfVipPlaces = 54
+typeOfProduct = 100, yearOfFoundation = 2005, location = Paris, scaleOfField = 953,nameOfSport = Athletics, countOfSportDisciplines = 6, countOfRunningTracks = 9 typeOfField = rubber
+typeOfProduct = 6, yearOfFoundation = 1995, location = New-York, scaleOfField = 921,nameOfSport = Swimming, depthOfPool = 8, countOfTracks = 9 purificationSystem = ULTRAVIOLET

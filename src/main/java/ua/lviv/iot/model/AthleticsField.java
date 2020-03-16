@@ -6,6 +6,7 @@ public class AthleticsField extends SportBuild {
     private String typeOfField;
 
     public AthleticsField() {
+        this(0,0,null,0,null,0,0,null);
     }
 
     public AthleticsField(final int numberOfSeats, final int yearOfFoundation, final String location,
@@ -15,6 +16,16 @@ public class AthleticsField extends SportBuild {
         this.countOfSportDisciplines = countOfSportDisciplines;
         this.countOfRunningTracks = countOfRunningTracks;
         this.typeOfField = typeOfField;
+    }
+
+    public final String getHeaders() {
+        return super.getHeaders() + "," + " countOfSportDisciplines" + "," + " countOfRunningTracks " + "," + "typeOfField";
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + "," + " countOfSportDisciplines = " + getCountOfSportDisciplines() + ","
+                + " countOfRunningTracks = " + getCountOfRunningTracks()
+                + " typeOfField = " + getTypeOfField();
     }
 
     public final int getCountOfSportDisciplines() {
