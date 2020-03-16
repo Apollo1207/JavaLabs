@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ConstructionManagerUtils {
-    private static SportBuildSorterByScaleOfField sportBuildSorterByNameOfSport = new ConstructionManagerUtils().new SportBuildSorterByScaleOfField();
+    private static SportBuildSorterByScaleOfField sportBuildSorterByScaleOfField = new ConstructionManagerUtils().new SportBuildSorterByScaleOfField();
 
     private static Comparator<SportBuild> compareByNameOfSport = new Comparator<SportBuild>() {
         @Override
@@ -34,17 +34,17 @@ public class ConstructionManagerUtils {
             builds.sort(compareByNameOfSport.reversed());
         }
     }
-//  method that uses inner static class with comparator
+    //  method that uses inner class with comparator
 
     public static void sortByScaleOfField(final List<SportBuild> builds, final SortType sortType) {
         if (sortType == SortType.ASCENDING) {
-            builds.sort(sportBuildSorterByNameOfSport);
+            builds.sort(sportBuildSorterByScaleOfField);
         }
         if (sortType == SortType.DESCENDING) {
-            builds.sort(sportBuildSorterByNameOfSport);
+            builds.sort(sportBuildSorterByScaleOfField);
         }
     }
-    //  method that uses inner class with comparator
+    //  method that uses static inner class with comparator
 
     public static void sortByYearOfFoundation(final List<SportBuild> builds, final SortType sortType) {
         if (sortType == SortType.ASCENDING) {

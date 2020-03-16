@@ -15,7 +15,7 @@ public class ConstructionManagerUtilsTest extends BaseConstructionManagerTest {
     }
 
     @Test
-    void sortWithStaticInner() {
+    void sortWithInnerClass() {
         ConstructionManagerUtils.sortByScaleOfField(builds, SortType.ASCENDING);
         System.out.println(builds.get(0).getScaleOfField());
         System.out.println(builds.get(1).getScaleOfField());
@@ -23,7 +23,7 @@ public class ConstructionManagerUtilsTest extends BaseConstructionManagerTest {
     }
 
     @Test
-    void sortWithInnerClass() {
+    void sortWithStaticInnerClass() {
         ConstructionManagerUtils constructionManagerUtils = new ConstructionManagerUtils();
         constructionManagerUtils.sortByYearOfFoundation(builds, SortType.ASCENDING);
         System.out.println(builds.get(0).getYearOfFoundation());
