@@ -31,7 +31,7 @@ public class SportBuildWriterTest extends BaseConstructionManagerTest {
             for (SportBuild build : builds) {
                 expectedString.append(build.getHeaders()).append("\n").append(build.toCSV()).append("\n");
             }
-            assertEquals(expectedString.toString(), writer.toString());
+            assertEquals(expectedString.toString(), csvWriter.toString());
         }
     }
 
