@@ -6,10 +6,6 @@ public class FootballField extends SportBuild {
     private String colorOfField;
     private int countOfVipPlaces;
 
-    public FootballField() {
-        this(0,0,null,0,null,null,null,0);
-    }
-
     public FootballField(final int numberOfSeats, final int yearOfFoundation, final String location,
                          final int scaleOfField, final String nameOfSport, final RoofType roofType,
                          final String colorOfField, final int countOfVipPlaces) {
@@ -19,15 +15,17 @@ public class FootballField extends SportBuild {
         this.countOfVipPlaces = countOfVipPlaces;
     }
 
-    public final String getHeaders() {
-        return super.getHeaders() + "," + " roofType" + "," + " colorOfField " + "," + "countOfVipPlaces";
+
+    public String getHeaders() {
+        return super.getHeaders() + ", " + "RoofType:" + ", " + "ColorOfField:" + ", " + "CountOfVipPlaces:";
     }
 
-    public final String toCSV() {
-        return super.toCSV() + "," + " roofType = " + getRoofType() + ","
-                + " colorOfField = " + getColorOfField()
-                + " countOfVipPlaces = " + getCountOfVipPlaces();
+    public String toCSV() {
+        return super.toCSV() + ", " + getRoofType()
+                + ", " + getColorOfField()
+                + ", " + getCountOfVipPlaces();
     }
+
 
     public final RoofType getRoofType() {
         return roofType;
