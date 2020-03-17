@@ -5,7 +5,6 @@ public class AthleticsField extends SportBuild {
     private int countOfRunningTracks;
     private String typeOfField;
 
-
     public AthleticsField(final int numberOfSeats, final int yearOfFoundation, final String location,
                           final int scaleOfField, final String nameOfSport, final int countOfSportDisciplines,
                           final int countOfRunningTracks, final String typeOfField) {

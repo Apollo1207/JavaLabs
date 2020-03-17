@@ -15,7 +15,6 @@ public class FootballField extends SportBuild {
         this.countOfVipPlaces = countOfVipPlaces;
     }
 
-
     public String getHeaders() {
         return super.getHeaders() + ", " + "RoofType:" + ", " + "ColorOfField:" + ", " + "CountOfVipPlaces:";
     }

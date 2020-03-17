@@ -6,7 +6,6 @@ public class SwimmingPool extends SportBuild {
     private int countOfTracks;
     private PurificationSystem purificationSystem;
 
-
     public SwimmingPool(final int numberOfSeats, final int yearOfFoundation, final String location,
                         final int scaleOfField, final String nameOfSport, final int depthOfPool,
                         final int countOfTracks, final PurificationSystem purificationSystem) {
