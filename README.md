@@ -2,3 +2,4 @@
 - JavaLab[3]
 - JavaLab[4]
 - JavaLab[5]
+- JavaLab[6]
