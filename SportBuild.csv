@@ -1,0 +1,6 @@
+NumberOfSeats:, YearOfFoundation:, Location:, ScaleOfField:, NameOfSport:, RoofType:, ColorOfField:, CountOfVipPlaces:
+50, 2008, Lviv, 848, Football, OPEN, green, 54
+NumberOfSeats:, YearOfFoundation:, Location:, ScaleOfField:, NameOfSport:, CountOfSportDisciplines:, CountOfRunningTracks:, TypeOfField:
+100, 2005, Paris, 953, Athletics, 6, 9, rubber
+NumberOfSeats:, YearOfFoundation:, Location:, ScaleOfField:, NameOfSport:, depthOfPool:, CountOfTracks:, PurificationSystem:
+6, 1995, New-York, 921, Swimming, 8, 9, ULTRAVIOLET

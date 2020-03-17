@@ -1,2 +1,4 @@
-# Lab-3-
-JavaLab3 and 4
+# Labs
+- JavaLab[3]
+- JavaLab[4]
+- JavaLab[5]

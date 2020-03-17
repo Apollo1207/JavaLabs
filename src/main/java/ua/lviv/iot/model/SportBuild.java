@@ -7,10 +7,6 @@ public class SportBuild {
     private int scaleOfField;
     private String nameOfSport;
 
-    public SportBuild() {
-        this(0, 0, null, 0, null);
-    }
-
     public SportBuild(final int numberOfSeats, final int yearOfFoundation,
                       final String location, final int scaleOfField, final String nameOfSport) {
         this.numberOfSeats = numberOfSeats;
@@ -20,18 +16,17 @@ public class SportBuild {
         this.nameOfSport = nameOfSport;
     }
 
+
     public String getHeaders() {
-        return "numberOfSeats" + "," + " yearOfFoundation " + "," + " location" + "," + " scaleOfField" + "," + "nameOfSport";
+
+        return "NumberOfSeats:" + ", " + "YearOfFoundation:" + ", " + "Location:" + ", " + "ScaleOfField:" + ", " + "NameOfSport:";
     }
 
     public String toCSV() {
-        return "typeOfProduct = " + getNumberOfSeats() + ","
-                + " yearOfFoundation = " + getYearOfFoundation() + ","
-                + " location = " + getLocation() + ","
-                + " scaleOfField = " + getScaleOfField() + ","
-                + "nameOfSport = " + getNameOfSport();
+        return getNumberOfSeats() + ", " + getYearOfFoundation() + ", "
+                + getLocation() + ", " + getScaleOfField()
+                + ", " + getNameOfSport();
     }
-
 
 
     public final int getNumberOfSeats() {
