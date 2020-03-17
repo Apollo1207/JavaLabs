@@ -25,7 +25,6 @@ public class FootballField extends SportBuild {
                 + ", " + getCountOfVipPlaces();
     }
 
-
     public final RoofType getRoofType() {
         return roofType;
     }

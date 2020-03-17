@@ -2,8 +2,6 @@ package ua.lviv.iot;
 
 import ua.lviv.iot.model.SportBuild;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
@@ -21,19 +19,6 @@ public class SportBuildWriter {
             textWriter.write(build.toCSV() + "\n");
         }
         textWriter.flush();
-    }
-
-    public static void readFromFile(String file) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String string;
-            while ((string = reader.readLine()) != null) {
-                System.out.println(string);
-            }
-        }
-    }
-
-    public String toString() {
-        return textWriter.toString();
     }
 
 }
