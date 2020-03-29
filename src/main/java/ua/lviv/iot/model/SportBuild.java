@@ -6,6 +6,7 @@ public class SportBuild {
     private String location;
     private int scaleOfField;
     private String nameOfSport;
+    private Integer id;
 
     public SportBuild(final int numberOfSeats, final int yearOfFoundation,
                       final String location, final int scaleOfField, final String nameOfSport) {
@@ -69,7 +70,13 @@ public class SportBuild {
         this.nameOfSport = nameOfSport;
     }
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
 
 

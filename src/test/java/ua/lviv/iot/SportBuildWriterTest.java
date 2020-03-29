@@ -15,7 +15,7 @@ public class SportBuildWriterTest extends BaseConstructionManagerTest {
     @Test
     public void testFile() throws IOException {
         try (Writer fileWriter = new FileWriter("SportBuild.csv")) {
-            SportBuildWriter writer = new SportBuildWriter();
+            ua.lviv.iot.SportBuildWriter writer = new ua.lviv.iot.SportBuildWriter();
             writer.setTextWriter(fileWriter);
             writer.writeToFile(builds);
         }
@@ -24,7 +24,7 @@ public class SportBuildWriterTest extends BaseConstructionManagerTest {
     @Test
     public void testWriteToFile() throws IOException {
         try (Writer csvWriter = new StringWriter()) {
-            SportBuildWriter writer = new SportBuildWriter();
+            ua.lviv.iot.SportBuildWriter writer = new ua.lviv.iot.SportBuildWriter();
             writer.setTextWriter(csvWriter);
             writer.writeToFile(builds);
             StringBuilder expectedString = new StringBuilder();
