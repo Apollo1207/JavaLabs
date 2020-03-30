@@ -33,7 +33,7 @@ public class ConstructionManagerUtilsTest extends BaseConstructionManagerTest {
 
     @Test
     void sortViaLambda() {
-        ConstructionManagerUtils.sortByNumberOfSeats(builds, SortType.DESCENDING);
+        ConstructionManagerUtils.sortByNumberOfSeats(builds, SortType.ASCENDING);
         System.out.println(builds.get(0).getNumberOfSeats());
         System.out.println(builds.get(1).getNumberOfSeats());
         System.out.println(builds.get(2).getNumberOfSeats());
