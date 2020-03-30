@@ -1,4 +1,4 @@
-package ua.lviv.iot;
+package ua.lviv.iot.manager;
 
 import ua.lviv.iot.model.SportBuild;
 

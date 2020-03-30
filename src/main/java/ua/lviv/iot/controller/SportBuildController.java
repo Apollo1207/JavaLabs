@@ -48,7 +48,8 @@ public class SportBuildController {
             final @PathVariable("id") Integer id,
             final @RequestBody SportBuild sportBuild) {
         sportBuild.setId(id);
-        HttpStatus updateStatus = sportBuilds.put(id, sportBuild) == null ? HttpStatus.NOT_FOUND : HttpStatus.OK;
-        return ResponseEntity.status(updateStatus).build();
+        SportBuild previousValue = sportBuilds.put(id, sportBuild);
+        return previousValue == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(previousValue);
+
     }
 }
