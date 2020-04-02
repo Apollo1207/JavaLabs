@@ -1,5 +1,7 @@
 package ua.lviv.iot.model;
 
+import java.util.Objects;
+
 public class SwimmingPool extends SportBuild {
 
     private int depthOfPool;
@@ -48,5 +50,30 @@ public class SwimmingPool extends SportBuild {
 
     public final void setPurificationSystem(final PurificationSystem purificationSystem) {
         this.purificationSystem = purificationSystem;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SwimmingPool that = (SwimmingPool) o;
+        return getDepthOfPool() == that.getDepthOfPool() &&
+                getCountOfTracks() == that.getCountOfTracks() &&
+                getPurificationSystem() == that.getPurificationSystem();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getDepthOfPool(), getCountOfTracks(), getPurificationSystem());
+    }
+
+    @Override
+    public String toString() {
+        return "SwimmingPool{" +
+                "depthOfPool=" + depthOfPool +
+                ", countOfTracks=" + countOfTracks +
+                ", purificationSystem=" + purificationSystem +
+                '}';
     }
 }
