@@ -1,5 +1,7 @@
 package ua.lviv.iot.model;
 
+import java.util.Objects;
+
 public class FootballField extends SportBuild {
 
     private RoofType roofType;
@@ -48,4 +50,31 @@ public class FootballField extends SportBuild {
     public final void setCountOfVipPlaces(final int countOfVipPlaces) {
         this.countOfVipPlaces = countOfVipPlaces;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        FootballField that = (FootballField) o;
+        return getCountOfVipPlaces() == that.getCountOfVipPlaces() &&
+                getRoofType() == that.getRoofType() &&
+                getColorOfField().equals(that.getColorOfField());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getRoofType(), getColorOfField(), getCountOfVipPlaces());
+    }
+
+    @Override
+    public String toString() {
+        return "FootballField{" +
+                "roofType=" + roofType +
+                ", colorOfField='" + colorOfField + '\'' +
+                ", countOfVipPlaces=" + countOfVipPlaces +
+                '}';
+    }
 }
+
+

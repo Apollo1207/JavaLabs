@@ -1,12 +1,22 @@
 package ua.lviv.iot.model;
 
+import javax.persistence.*;
+import java.util.Objects;
+
+@Entity
 public class SportBuild {
     private int numberOfSeats;
     private int yearOfFoundation;
     private String location;
     private int scaleOfField;
     private String nameOfSport;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    public SportBuild() {
+    }
 
     public SportBuild(final int numberOfSeats, final int yearOfFoundation,
                       final String location, final int scaleOfField, final String nameOfSport) {
@@ -19,7 +29,6 @@ public class SportBuild {
 
 
     public String getHeaders() {
-
         return "NumberOfSeats:" + ", " + "YearOfFoundation:" + ", " + "Location:" + ", " + "ScaleOfField:" + ", " + "NameOfSport:";
     }
 
@@ -74,8 +83,38 @@ public class SportBuild {
         return id;
     }
 
-    public void setId(Integer id) {
+    public final void setId(Integer id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SportBuild that = (SportBuild) o;
+        return getNumberOfSeats() == that.getNumberOfSeats() &&
+                getYearOfFoundation() == that.getYearOfFoundation() &&
+                getScaleOfField() == that.getScaleOfField() &&
+                getLocation().equals(that.getLocation()) &&
+                getNameOfSport().equals(that.getNameOfSport()) &&
+                getId().equals(that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNumberOfSeats(), getYearOfFoundation(), getLocation(), getScaleOfField(), getNameOfSport(), getId());
+    }
+
+    @Override
+    public String toString() {
+        return "SportBuild{" +
+                "numberOfSeats=" + numberOfSeats +
+                ", yearOfFoundation=" + yearOfFoundation +
+                ", location='" + location + '\'' +
+                ", scaleOfField=" + scaleOfField +
+                ", nameOfSport='" + nameOfSport + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
 
