@@ -1,7 +1,9 @@
 package ua.lviv.iot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class SportBuild {
@@ -14,6 +16,15 @@ public class SportBuild {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "country_id")
+    @JsonIgnoreProperties("sportBuilds")
+    private Country country;
+
+    @ManyToMany(mappedBy = "sportBuilds")
+    @JsonIgnoreProperties("sportBuilds")
+    private Set<Sponsor> sponsors;
 
     public SportBuild() {
     }
@@ -87,35 +98,51 @@ public class SportBuild {
         this.id = id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SportBuild that = (SportBuild) o;
-        return getNumberOfSeats() == that.getNumberOfSeats() &&
-                getYearOfFoundation() == that.getYearOfFoundation() &&
-                getScaleOfField() == that.getScaleOfField() &&
-                getLocation().equals(that.getLocation()) &&
-                getNameOfSport().equals(that.getNameOfSport()) &&
-                getId().equals(that.getId());
+    public Country getCountry() {
+        return country;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNumberOfSeats(), getYearOfFoundation(), getLocation(), getScaleOfField(), getNameOfSport(), getId());
+    public void setCountry(Country country) {
+        this.country = country;
     }
 
-    @Override
-    public String toString() {
-        return "SportBuild{" +
-                "numberOfSeats=" + numberOfSeats +
-                ", yearOfFoundation=" + yearOfFoundation +
-                ", location='" + location + '\'' +
-                ", scaleOfField=" + scaleOfField +
-                ", nameOfSport='" + nameOfSport + '\'' +
-                ", id=" + id +
-                '}';
+    public Set<Sponsor> getSponsors() {
+        return sponsors;
     }
+
+    public void setSponsors(Set<Sponsor> sponsors) {
+        this.sponsors = sponsors;
+    }
+
+    //    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        SportBuild that = (SportBuild) o;
+//        return getNumberOfSeats() == that.getNumberOfSeats() &&
+//                getYearOfFoundation() == that.getYearOfFoundation() &&
+//                getScaleOfField() == that.getScaleOfField() &&
+//                getLocation().equals(that.getLocation()) &&
+//                getNameOfSport().equals(that.getNameOfSport()) &&
+//                getId().equals(that.getId());
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(getNumberOfSeats(), getYearOfFoundation(), getLocation(), getScaleOfField(), getNameOfSport(), getId());
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "SportBuild{" +
+//                "numberOfSeats=" + numberOfSeats +
+//                ", yearOfFoundation=" + yearOfFoundation +
+//                ", location='" + location + '\'' +
+//                ", scaleOfField=" + scaleOfField +
+//                ", nameOfSport='" + nameOfSport + '\'' +
+//                ", id=" + id +
+//                '}';
+//    }
 }
 
 
