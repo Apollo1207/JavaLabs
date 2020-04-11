@@ -3,4 +3,4 @@ NumberOfSeats:, YearOfFoundation:, Location:, ScaleOfField:, NameOfSport:, RoofT
 NumberOfSeats:, YearOfFoundation:, Location:, ScaleOfField:, NameOfSport:, CountOfSportDisciplines:, CountOfRunningTracks:, TypeOfField:
 100, 2005, Paris, 953, Athletics, 6, 9, rubber
 NumberOfSeats:, YearOfFoundation:, Location:, ScaleOfField:, NameOfSport:, depthOfPool:, CountOfTracks:, PurificationSystem:
-6, 1995, New-York, 921, Swimming, 8, 9, ULTRAVIOLET
+6, 1995, New-York, 921,  Swimming, 8, 9, ULTRAVIOLET
