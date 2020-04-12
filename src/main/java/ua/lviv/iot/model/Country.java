@@ -16,9 +16,9 @@ public class Country {
     private String nameOfCountry;
 
 
-        @OneToMany(mappedBy = "country", fetch = FetchType.EAGER)
-        @JsonIgnoreProperties("country")
-        private Set<SportBuild> sportBuilds;
+    @OneToMany(mappedBy = "country", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("country")
+    private Set<SportBuild> sportBuilds;
 
     public Country() {
     }
