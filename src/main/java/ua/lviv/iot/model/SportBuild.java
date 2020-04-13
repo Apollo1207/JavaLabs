@@ -1,7 +1,10 @@
 package ua.lviv.iot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class SportBuild {
@@ -15,6 +18,19 @@ public class SportBuild {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "country_id")
+    @JsonIgnoreProperties("sportBuilds")
+    private Country country;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "SportBuild_Sponsors", joinColumns = {
+            @JoinColumn(name = "sportBuild_id", nullable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "sponsor_id", nullable = true)})
+    @JsonIgnoreProperties("sportBuilds")
+    private Set<Sponsor> sponsors;
+
     public SportBuild() {
     }
 
@@ -26,8 +42,7 @@ public class SportBuild {
         this.scaleOfField = scaleOfField;
         this.nameOfSport = nameOfSport;
     }
-
-
+    @JsonIgnore
     public String getHeaders() {
         return "NumberOfSeats:" + ", " + "YearOfFoundation:" + ", " + "Location:" + ", " + "ScaleOfField:" + ", " + "NameOfSport:";
     }
@@ -38,44 +53,43 @@ public class SportBuild {
                 + ", " + getNameOfSport();
     }
 
-
-    public final int getNumberOfSeats() {
+    public int getNumberOfSeats() {
         return numberOfSeats;
     }
 
-    public final void setNumberOfSeats(final int numberOfSeats) {
+    public void setNumberOfSeats(int numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
     }
 
-    public final int getYearOfFoundation() {
+    public int getYearOfFoundation() {
         return yearOfFoundation;
     }
 
-    public final void setYearOfFoundation(final int yearOfFoundation) {
+    public void setYearOfFoundation(int yearOfFoundation) {
         this.yearOfFoundation = yearOfFoundation;
     }
 
-    public final String getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public final void setLocation(final String location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public final int getScaleOfField() {
+    public int getScaleOfField() {
         return scaleOfField;
     }
 
-    public final void setScaleOfField(final int scaleOfField) {
+    public void setScaleOfField(int scaleOfField) {
         this.scaleOfField = scaleOfField;
     }
 
-    public final String getNameOfSport() {
+    public String getNameOfSport() {
         return nameOfSport;
     }
 
-    public final void setNameOfSport(final String nameOfSport) {
+    public void setNameOfSport(String nameOfSport) {
         this.nameOfSport = nameOfSport;
     }
 
@@ -83,39 +97,26 @@ public class SportBuild {
         return id;
     }
 
-    public final void setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SportBuild that = (SportBuild) o;
-        return getNumberOfSeats() == that.getNumberOfSeats() &&
-                getYearOfFoundation() == that.getYearOfFoundation() &&
-                getScaleOfField() == that.getScaleOfField() &&
-                getLocation().equals(that.getLocation()) &&
-                getNameOfSport().equals(that.getNameOfSport()) &&
-                getId().equals(that.getId());
+    public Country getCountry() {
+        return country;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNumberOfSeats(), getYearOfFoundation(), getLocation(), getScaleOfField(), getNameOfSport(), getId());
+    public void setCountry(Country country) {
+        this.country = country;
     }
 
-    @Override
-    public String toString() {
-        return "SportBuild{" +
-                "numberOfSeats=" + numberOfSeats +
-                ", yearOfFoundation=" + yearOfFoundation +
-                ", location='" + location + '\'' +
-                ", scaleOfField=" + scaleOfField +
-                ", nameOfSport='" + nameOfSport + '\'' +
-                ", id=" + id +
-                '}';
+    public Set<Sponsor> getSponsors() {
+        return sponsors;
     }
+
+    public void setSponsors(Set<Sponsor> sponsors) {
+        this.sponsors = sponsors;
+    }
+
 }
 
 
