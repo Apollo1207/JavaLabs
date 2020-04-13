@@ -1,5 +1,6 @@
 package ua.lviv.iot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -41,7 +42,7 @@ public class SportBuild {
         this.scaleOfField = scaleOfField;
         this.nameOfSport = nameOfSport;
     }
-
+    @JsonIgnore
     public String getHeaders() {
         return "NumberOfSeats:" + ", " + "YearOfFoundation:" + ", " + "Location:" + ", " + "ScaleOfField:" + ", " + "NameOfSport:";
     }
